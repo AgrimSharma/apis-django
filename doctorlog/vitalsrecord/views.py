@@ -5,8 +5,7 @@ from rest_framework import viewsets
 from django.http import JsonResponse
 from rest_framework.views import APIView
 from rest_framework import status
-from modules.models import Users
-from modules.serializers import UserSerializer
+from modules.serializers import UserSerializerReport
 
 
 class VitalsAPI(viewsets.ModelViewSet):
@@ -50,11 +49,11 @@ class VitalsReportUserAPI(APIView):
         """
         if user_id:
             response = []
-            vitals_report = VitalReport.objects.filter(userID__id=user_id, status=True)
-            for i,v in enumerate(vitals_report):
+            vitals_report = VitalReport.objects.filter(userID__id=user_id)
+            for i, v in enumerate(vitals_report):
                 resp = VitalsReportSerializer(v).data
-                vitals = VitalsSerializer(Vitals.objects.get(id=resp.get('vitalID'))).data
-                user = UserSerializer(Users.objects.get(id=resp.get('userID'))).data
+                vitals = VitalsSerializer(v.vitalID).data
+                user = UserSerializerReport(v.userID).data
                 response.append(dict(user=user, vitals=vitals, vitals_report=resp, vitals_report_id=v.id))
             return JsonResponse(dict(response=response, status=status.HTTP_200_OK))
         else:

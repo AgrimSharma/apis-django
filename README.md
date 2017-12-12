@@ -1,2 +1,1 @@
-
-UDjango API project which is built using DRF and Django 
+Django API project which is built using DRF and Django 

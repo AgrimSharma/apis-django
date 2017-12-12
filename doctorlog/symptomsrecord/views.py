@@ -5,7 +5,7 @@ from .models import SymptomsDef, SymptomsRecord, SymptomsUser
 from .serializers import SymptomsRecordSerializer, SymptomsUserSerializer, SymptomsDefSerializer
 from rest_framework import viewsets
 from rest_framework import status
-from modules.serializers import UserSerializer
+from modules.serializers import UserSerializerReport
 from modules.models import Users
 
 
@@ -46,7 +46,7 @@ class SymptomsListUserAPI(APIView):
             response = []
             for s in symptoms:
                 resp = SymptomsUserSerializer(s).data
-                user = UserSerializer(Users.objects.get(id=resp.get("userID"))).data
+                user = UserSerializerReport(Users.objects.get(id=resp.get("userID"))).data
                 response.append(dict(user=user, symptoms_user=SymptomsUserSerializer(s).data, symptoms_user_id=s.id))
             return JsonResponse(dict(response=response, status=status.HTTP_200_OK))
         else:
@@ -66,7 +66,7 @@ class SymptomsRecordsUserAPI(APIView):
             result = []
             for x in values:
                 symptoms_record = SymptomsRecordSerializer(x).data
-                user = UserSerializer(Users.objects.get(id=symptoms_record.get('userID'))).data
+                user = UserSerializerReport(Users.objects.get(id=symptoms_record.get('userID'))).data
                 symptoms = SymptomsUserSerializer(SymptomsUser.objects.get(id=symptoms_record.get('symptomsID'))).data
                 result.append(dict(user=user, symptoms=symptoms, symptoms_record=symptoms_record,
                                    symptoms_record_id=x.id))
