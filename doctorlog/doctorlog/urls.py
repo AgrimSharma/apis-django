@@ -18,12 +18,12 @@ router.register(r'symptoms_def', SymptomsAPI)
 
 
 urlpatterns = [
-    url(r'admin/', include(admin.site.urls)),
+    url(r'', include(admin.site.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^docs/', include_docs_urls(title='DoctorBox')),
     url(r'^api/v1/', include(router.urls)),
     url(r'api/v1/ping/$', views.Ping.as_view(), name='ping'),
-    url(r'api/v1/symptoms/users/(?P<user_id>[0-9]+)/$', SymptomsListUserAPI.as_view()),
+    url(r'api/v1/symptoms/users/(?P<user_id>[0-9]+)/$', SymptomsListUserAPI.as_view(),name="symptoms_user"),
     url(r'api/v1/symptoms/records/users/(?P<user_id>[0-9]+)/$', SymptomsRecordsUserAPI.as_view()),
     url(r'api/v1/symptoms_list/(?P<disease>[\w ]+)/$', views.SymptomsList.as_view()),
     url(r'api/v1/vitals/reports/users/(?P<user_id>[0-9]+)/$', VitalsReportUserAPI.as_view()),

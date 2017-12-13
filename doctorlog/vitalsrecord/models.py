@@ -14,8 +14,8 @@ class Vitals(models.Model):
     options = models.CharField(max_length=100)
     info = models.CharField(max_length=100)
     tips = models.CharField(max_length=1000)
-    createdDate = models.DateTimeField(null=True, blank=True, default=now())
-    updatedDate = models.DateTimeField(null=True, blank=True, default=now())
+    createdDate = models.DateTimeField(null=True, blank=True)
+    updatedDate = models.DateTimeField(null=True, blank=True)
     status = models.BooleanField(default=True)
 
     class Meta:
@@ -45,8 +45,8 @@ class VitalReport(models.Model):
     sugar = models.CharField(max_length=10)
     comment = models.CharField(max_length=1000)
     reportedDate = models.DateTimeField()
-    createdDate = models.DateTimeField(null=True, blank=True, default=now())
-    updatedDate = models.DateTimeField(null=True, blank=True, default=now())
+    createdDate = models.DateTimeField(null=True, blank=True)
+    updatedDate = models.DateTimeField(null=True, blank=True)
     status = models.BooleanField(default=True)
 
     def __str__(self):

@@ -8,19 +8,19 @@ class SymptomsDef(models.Model):
     """
     Symptoms Definition model
     """
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, unique=True)
     subTitle = models.CharField(max_length=100, null=True, blank=True)
     description = models.CharField(max_length=1000, null=True, blank=True)
-    mediaTitle = models.CharField(max_length=1000)
+    mediaTitle = models.CharField(max_length=1000, null=True, blank=True)
     mediaURL = models.URLField(null=True, blank=True)
-    describe = models.TextField()
-    location = models.TextField()
-    length = models.TextField()
-    triggeredBy = models.TextField()
-    otherSymptoms = models.TextField()
-    reliefBy = models.TextField()
-    createdDate = models.DateTimeField(null=True, blank=True, default=django.utils.timezone.now())
-    updatedDate = models.DateTimeField(null=True, blank=True, default=django.utils.timezone.now())
+    describe = models.TextField(null=True, blank=True)
+    location = models.TextField(null=True, blank=True)
+    length = models.TextField(null=True, blank=True)
+    triggeredBy = models.TextField(null=True, blank=True)
+    otherSymptoms = models.TextField(null=True, blank=True)
+    reliefBy = models.TextField(null=True, blank=True)
+    createdDate = models.DateTimeField(null=True, blank=True)
+    updatedDate = models.DateTimeField(null=True, blank=True)
     status = models.BooleanField(default=True)
 
     class Meta:
@@ -49,8 +49,8 @@ class SymptomsUser(models.Model):
     triggeredBy = models.TextField(null=True, blank=True)
     otherSymptoms = models.TextField(null=True, blank=True)
     reliefBy = models.TextField(null=True, blank=True)
-    createdDate = models.DateTimeField(null=True, blank=True, default=django.utils.timezone.now())
-    updatedDate = models.DateTimeField(null=True, blank=True, default=django.utils.timezone.now())
+    createdDate = models.DateTimeField(null=True, blank=True)
+    updatedDate = models.DateTimeField(null=True, blank=True)
     status = models.BooleanField(default=True)
 
     class Meta:
@@ -70,7 +70,7 @@ class SymptomsRecord(models.Model):
     userID = models.ForeignKey(Users, related_name="symptom_report_user")
     symptomsID = models.ForeignKey(SymptomsUser, related_name="symptom_users")
     reportedDate = models.DateTimeField(null=True, blank=True)
-    updatedDate = models.DateTimeField(null=True, blank=True, default=django.utils.timezone.now())
+    updatedDate = models.DateTimeField(null=True, blank=True)
     status = models.BooleanField(default=True)
 
     def __str__(self):

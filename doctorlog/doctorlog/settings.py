@@ -102,19 +102,20 @@ USE_L10N = True
 
 USE_TZ = True
 
-TIME_ZONE =  'Asia/Kolkata'
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.8/howto/static-files/
-
 STATIC_URL = '/static/'
 
 REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES': [
         'rest_framework.renderers.JSONRenderer',
         'rest_framework.renderers.BrowsableAPIRenderer',
-        'rest_framework.permissions.IsAdminUser',
+        # 'rest_framework.permissions.IsAdminUser',
     ],
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ),
     'HIDE_DOCS': True,
+    'TEST_REQUEST_DEFAULT_FORMAT': 'json'
 }
 SUIT_CONFIG = {
     'LIST_PER_PAGE': 20,

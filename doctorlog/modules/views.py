@@ -56,4 +56,6 @@ class LoginUserAPI(APIView):
             else:
                 return JsonResponse(dict(status=status.HTTP_404_NOT_FOUND))
         except Exception:
-            return JsonResponse('est')
+            return JsonResponse(dict(status=status.HTTP_404_NOT_FOUND))
+
+

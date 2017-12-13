@@ -25,8 +25,8 @@ class Users(models.Model):
             'unique': _("A user with that email already exists."),
         })
     role = models.CharField(max_length=50, choices=roles, default='User')
-    createdDate = models.DateTimeField(null=True, blank=True, default=django.utils.timezone.now())
-    updatedDate = models.DateTimeField(null=True, blank=True, default=django.utils.timezone.now())
+    createdDate = models.DateTimeField(null=True, blank=True)
+    updatedDate = models.DateTimeField(null=True, blank=True)
     status = models.BooleanField(default=True)
 
     class Meta:
@@ -39,12 +39,26 @@ class Users(models.Model):
         return self.email
 
     def get_full_name(self):
+        """
+        get full name of user
+        :return: full name
+        """
         return self.firstName + " " + self.lastName
 
     def set_password(self, password):
+        """
+        set password for a user used when we have to change password
+        :param password: string
+        :return: secure password
+        """
         self.password = make_password(password)
 
     def set_status(self,status):
+        """
+        set status of a user as True or False
+        :param status: Boolean
+        :return: None
+        """
         self.status = status
 
     def check_password(self, raw_password):
@@ -53,9 +67,19 @@ class Users(models.Model):
         hashing formats behind the scenes.
         """
         def setter(raw_password):
+            """
+            :param raw_password:
+            :return:
+            """
             self.set_password(raw_password)
         return check_password(raw_password, self.password, setter)
 
     def save(self, *args, **kwargs):
+        """
+        over riding save method to save password securely
+        :param args:
+        :param kwargs:
+        :return: None
+        """
         self.password = make_password(self.password)
         super(Users, self).save()
