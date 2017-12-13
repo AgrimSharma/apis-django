@@ -6,7 +6,8 @@ from modules import views
 from symptomsrecord.views import SymptomsListAPI, SymptomsRecordsAPI, SymptomsRecordsUserAPI, SymptomsListUserAPI, \
     SymptomsDefAPI, SymptomsAPI
 from vitalsrecord.views import VitalsReportAPI, VitalsAPI, VitalsReportUserAPI, VitalsNameAPI
-
+from django.conf import settings
+from django.conf.urls.static import static
 
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
@@ -32,4 +33,4 @@ urlpatterns = [
     url(r'api/v1/users/email/(?P<email>[\w].+)/$', views.UserByEmailAPI.as_view()),
     url(r'api/v1/users/auth/(?P<email>[\w].+)/(?P<password>[\w].+)/$',
         views.LoginUserAPI.as_view()),
-    ]
+    ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

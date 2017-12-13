@@ -103,6 +103,12 @@ USE_L10N = True
 USE_TZ = True
 
 STATIC_URL = '/static/'
+#STATICFILES_DIRS = ["/home/agrim89/apis-django/doctorlog/static/"]
+#            os.path.join(BASE_DIR, "static"),
+#                "/home/agrim89/apis-django/doctorlog/static/"
+ #               ]
+
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES': [
