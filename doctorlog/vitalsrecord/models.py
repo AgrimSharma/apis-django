@@ -50,7 +50,7 @@ class VitalReport(models.Model):
     status = models.BooleanField(default=True)
 
     def __str__(self):
-        return self.userID.firstName + " " + self.userID.lastName + " : " + self.vitalID.name
+        return self.userID.first_name + " " + self.userID.last_name + " : " + self.vitalID.name
 
     def __unicode__(self):
-        return self.userID.firstName + " " + self.userID.lastName + " : " + self.vitalID.name
+        return self.userID.first_name + " " + self.userID.last_name + " : " + self.vitalID.name

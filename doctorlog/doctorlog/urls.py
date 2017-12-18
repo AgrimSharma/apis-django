@@ -4,10 +4,9 @@ from django.conf.urls import url, include
 from rest_framework import routers
 from modules import views
 from symptomsrecord.views import SymptomsListAPI, SymptomsRecordsAPI, SymptomsRecordsUserAPI, SymptomsListUserAPI, \
-    SymptomsDefAPI, SymptomsAPI
+    SymptomsDefName, SymptomsAPI
 from vitalsrecord.views import VitalsReportAPI, VitalsAPI, VitalsReportUserAPI, VitalsNameAPI
-from django.conf import settings
-from django.conf.urls.static import static
+
 
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
@@ -24,13 +23,12 @@ urlpatterns = [
     url(r'^docs/', include_docs_urls(title='DoctorBox')),
     url(r'^api/v1/', include(router.urls)),
     url(r'api/v1/ping/$', views.Ping.as_view(), name='ping'),
-    url(r'api/v1/symptoms/users/(?P<user_id>[0-9]+)/$', SymptomsListUserAPI.as_view(),name="symptoms_user"),
-    url(r'api/v1/symptoms/records/users/(?P<user_id>[0-9]+)/$', SymptomsRecordsUserAPI.as_view()),
-    url(r'api/v1/symptoms_list/(?P<disease>[\w ]+)/$', views.SymptomsList.as_view()),
-    url(r'api/v1/vitals/reports/users/(?P<user_id>[0-9]+)/$', VitalsReportUserAPI.as_view()),
-    url(r'api/v1/vitals/by/name/(?P<name>[\w ]+)/$', VitalsNameAPI.as_view()),
-    url(r'api/v1/symptoms/def/(?P<name>[a-zA-Z]+)/$', SymptomsDefAPI.as_view()),
-    url(r'api/v1/users/email/(?P<email>[\w].+)/$', views.UserByEmailAPI.as_view()),
-    url(r'api/v1/users/auth/(?P<email>[\w].+)/(?P<password>[\w].+)/$',
-        views.LoginUserAPI.as_view()),
-    ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    url(r'api/v1/vitals/reports/users/', VitalsReportUserAPI.as_view()),
+    url(r'api/v1/vitals/by/name/', VitalsNameAPI.as_view()),
+    url(r'api/v1/symptoms/by/name/', SymptomsDefName.as_view()),
+    url(r'api/v1/authenticate/', views.LoginUserAPI.as_view()),
+    url(r'api/v1/users/by/email/', views.UserByEmailAPI.as_view()),
+    url(r'api/v1/symptoms/records/users/', SymptomsRecordsUserAPI.as_view()),
+    url(r'api/v1/symptoms/by/users/', SymptomsListUserAPI.as_view(), name="symptoms_user"),
+
+]

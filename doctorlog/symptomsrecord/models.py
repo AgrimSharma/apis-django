@@ -57,10 +57,10 @@ class SymptomsUser(models.Model):
         ordering = ["name"]
 
     def __str__(self):
-        return self.userID.firstName + " " + self.userID.lastName + " : " + self.name
+        return self.userID.first_name + " " + self.userID.last_name + " : " + self.name
 
     def __unicode__(self):
-        return self.userID.firstName + " " + self.userID.lastName + " : " + self.name
+        return self.userID.first_name + " " + self.userID.last_name + " : " + self.name
 
 
 class SymptomsRecord(models.Model):
@@ -74,7 +74,7 @@ class SymptomsRecord(models.Model):
     status = models.BooleanField(default=True)
 
     def __str__(self):
-        return self.userID.firstName + " " + self.userID.lastName + " : " + self.symptomsID.name
+        return self.userID.first_name + " " + self.userID.last_name + " : " + self.symptomsID.name
 
     def __unicode__(self):
-        return self.userID.firstName + " " + self.userID.lastName + " : " + self.symptomsID.name
+        return self.userID.first_name + " " + self.userID.last_name + " : " + self.symptomsID.name

@@ -10,11 +10,11 @@ class UserForm(django.forms.ModelForm):
     """
     class Meta:
         model = Users
-        fields = ['firstName', 'lastName', "email", 'password', 'role', 'status', "createdDate", "updatedDate"]
+        fields = ['first_name', 'last_name', "email", 'password', 'role', 'status', "createdDate", "updatedDate"]
         widgets = {
+            "first_name": AutosizedTextarea,
             "email": EnclosedInput(append='icon-envelope'),
-            "lastName": AutosizedTextarea,
-            "firstName": AutosizedTextarea,
+            "last_name": AutosizedTextarea,
             "password": HTML5Input(input_type='password'),
             'createdDate': SuitSplitDateTimeWidget,
             "updatedDate": SuitSplitDateTimeWidget

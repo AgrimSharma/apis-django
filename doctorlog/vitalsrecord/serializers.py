@@ -28,3 +28,27 @@ class VitalsReportSerializer(serializers.ModelSerializer):
         model = VitalReport
         fields = ('weight', 'systol', 'dystol',"heartRate", "options", "temperature",
                   "pulse","sugar", "stressLevel", "comment", "reportedDate", "updatedDate", "createdDate")
+
+
+class VitalRecordUserList(serializers.ModelSerializer):
+
+    """
+    Serializer Symptoms Record
+    """
+    userID = serializers.CharField()
+
+    class Meta:
+        model = VitalReport
+        fields = ('userID',)
+
+
+class VitalByName(serializers.ModelSerializer):
+
+    """
+    Serializer Symptoms Record
+    """
+    name = serializers.CharField()
+
+    class Meta:
+        model = Vitals
+        fields = ('name',)

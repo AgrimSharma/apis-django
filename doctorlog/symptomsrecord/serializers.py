@@ -40,3 +40,52 @@ class SymptomsDefSerializer(serializers.ModelSerializer):
         model = SymptomsDef
         fields = ['name', 'description', 'subTitle', 'mediaTitle', "mediaURL", 'describe', 'location',
                   "length", "triggeredBy", "otherSymptoms", "reliefBy", "status", "createdDate" ,"updatedDate"]
+
+
+class DefSerializer(serializers.ModelSerializer):
+    """
+    Serializer Symptoms Definition
+    """
+    createdDate=serializers.DateTimeField(default=datetime.datetime.now())
+    updatedDate=serializers.DateTimeField(default=datetime.datetime.now())
+
+    class Meta:
+        model = SymptomsDef
+        fields = ['name', 'description', 'subTitle', 'mediaTitle', "mediaURL", 'describe', 'location',
+                  "length", "triggeredBy", "otherSymptoms", "reliefBy", "status", "createdDate" ,"updatedDate"]
+
+
+class SymptomsRecordUser(serializers.ModelSerializer):
+
+    """
+    Serializer Symptoms Record
+    """
+    userID = serializers.CharField()
+
+    class Meta:
+        model = SymptomsRecord
+        fields = ('userID',)
+
+
+class SymptomsUserList(serializers.ModelSerializer):
+
+    """
+    Serializer Symptoms Record
+    """
+    userID = serializers.CharField()
+
+    class Meta:
+        model = SymptomsUser
+        fields = ('userID',)
+
+
+class SymptomsByName(serializers.ModelSerializer):
+
+    """
+    Serializer Symptoms Record
+    """
+    name = serializers.CharField()
+
+    class Meta:
+        model = SymptomsDef
+        fields = ('name',)

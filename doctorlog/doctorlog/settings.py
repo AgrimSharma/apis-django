@@ -24,11 +24,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '9gzoa3j(*%3lkl00^#tb3i@pex*#hk=0k(2b9fq8_ez_bl)9-)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-#DEBUG = True
+# DEBUG = True
 DEBUG = False
 
-ALLOWED_HOSTS = [".pythonanywhere.com"]
-
+# ALLOWED_HOSTS = [".pythonanywhere.com"]
+ALLOWED_HOSTS = ["localhost", "0.0.0.0", "*"]
+# ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -62,12 +63,12 @@ ROOT_URLCONF = 'doctorlog.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, "templates")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
-                'django.template.context_processors.request', # Make sure you have this line
+                'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
 
@@ -78,14 +79,14 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'doctorlog.wsgi.application'
 
-
+dbpath = '/home/pranav/apis-django/doctorlog/'
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.path.join(dbpath, "db1.sqlite3"),
     }
 }
 
@@ -104,13 +105,12 @@ USE_L10N = True
 USE_TZ = True
 
 STATIC_URL = '/static/'
-#STATICFILES_DIRS = ["/home/agrim89/apis-django/doctorlog/static/"]
-#            os.path.join(BASE_DIR, "static"),
-#                "/home/agrim89/apis-django/doctorlog/static/"
- #               ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
+STATICFILES_DIRS = ["/home/prnav/apis-django/doctorlog/static"]
 
+STATIC_ROOT = os.path.join(BASE_DIR, "static/")
+
+# STATIC_ROOT = "/home/pranav/apis-django/doctorlog/static/"
 REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES': [
         'rest_framework.renderers.JSONRenderer',

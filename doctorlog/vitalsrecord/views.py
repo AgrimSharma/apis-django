@@ -1,16 +1,17 @@
 # coding=utf-8
 from .models import *
-from .serializers import VitalsReportSerializer, VitalsSerializer
+from .serializers import VitalsReportSerializer, VitalsSerializer, VitalByName, VitalRecordUserList
 from rest_framework import viewsets
 from django.http import JsonResponse
 from rest_framework.views import APIView
 from rest_framework import status
 from modules.serializers import UserSerializerReport
+from rest_framework.generics import GenericAPIView
 
 
 class VitalsAPI(viewsets.ModelViewSet):
     """
-    API endpoint that allows users to be viewed or edited.
+    <h4>API endpoint that allows users to be viewed or edited.</h4>
     """
     queryset = Vitals.objects.all()
     serializer_class = VitalsSerializer
@@ -18,43 +19,46 @@ class VitalsAPI(viewsets.ModelViewSet):
 
 class VitalsReportAPI(viewsets.ModelViewSet):
     """
-    API endpoint that allows users to be viewed or edited.
+    <h4>API endpoint that allows users to viewed or edited Vital Reports.</h4>
     """
     queryset = VitalReport.objects.all()
     serializer_class = VitalsReportSerializer
 
 
-class VitalsNameAPI(APIView):
+class VitalsNameAPI(GenericAPIView):
     """
-    List vitals by name
+    <h4>List vitals by name</h4>
     """
-    def get(self, request, name):
+    queryset=Vitals.objects.all()
+    serializer_class=VitalByName
+
+    def post(self, request):
         """
-        List vitals by name
+        <h4>List vitals by name</h4>
         """
-        vitals = Vitals.objects.filter(name__icontains=name.replace("%20", " "))
+        vitals = Vitals.objects.filter(name__icontains=request.data['name'])
         result = []
         for r in vitals:
             result.append(VitalsSerializer(r).data)
         return JsonResponse(dict(response=result, status=status.HTTP_200_OK))
 
 
-class VitalsReportUserAPI(APIView):
+class VitalsReportUserAPI(GenericAPIView):
     """
-    List Vitals Report by user ID
+    <h4>List Vitals Report by user ID</h4>
     """
-    def get(self, request, user_id):
+    queryset=VitalReport.objects.all()
+    serializer_class=VitalRecordUserList
+
+    def post(self, request):
         """
-        List Vitals Report by user ID
+        <h4>List Vitals Report by user ID</h4>
         """
-        if user_id:
-            response = []
-            vitals_report = VitalReport.objects.filter(userID__id=user_id)
-            for i, v in enumerate(vitals_report):
-                resp = VitalsReportSerializer(v).data
-                vitals = VitalsSerializer(v.vitalID).data
-                user = UserSerializerReport(v.userID).data
-                response.append(dict(user=user, vitals=vitals, vitals_report=resp, vitals_report_id=v.id))
-            return JsonResponse(dict(response=response, status=status.HTTP_200_OK))
-        else:
-            return JsonResponse(dict(response='Vitals Report not Found', status=status.HTTP_404_NOT_FOUND))
+        response = []
+        vitals_report = VitalReport.objects.filter(userID__id=request.data['userID'])
+        for i, v in enumerate(vitals_report):
+            resp = VitalsReportSerializer(v).data
+            vitals = VitalsSerializer(v.vitalID).data
+            user = UserSerializerReport(v.userID).data
+            response.append(dict(user=user, vitals=vitals, vitals_report=resp, vitals_report_id=v.id))
+        return JsonResponse(dict(response=response, status=status.HTTP_200_OK))
