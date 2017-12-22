@@ -1,10 +1,6 @@
 from django.contrib.auth.models import User
 
 from django.db import models
-import django.utils.timezone
-from django.utils.translation import ugettext_lazy as _
-from django.contrib.auth.hashers import make_password, check_password
-
 
 roles = (
     ('Doctor', 'Doctor'),

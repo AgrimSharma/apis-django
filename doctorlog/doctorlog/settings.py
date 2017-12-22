@@ -28,7 +28,7 @@ SECRET_KEY = '9gzoa3j(*%3lkl00^#tb3i@pex*#hk=0k(2b9fq8_ez_bl)9-)'
 DEBUG = False
 
 # ALLOWED_HOSTS = [".pythonanywhere.com"]
-ALLOWED_HOSTS = ["localhost", "0.0.0.0", "*"]
+ALLOWED_HOSTS = ["*"]
 # ALLOWED_HOSTS = []
 
 # Application definition
@@ -129,14 +129,16 @@ SUIT_CONFIG = {
     'MENU': (
         'sites',
 
-        {'label': 'User', 'icon':'icon-user', 'models': ('modules.Users',),'permissions': 'auth.user'},
+        {'label': 'User', 'icon': 'icon-user', 'models': ('modules.Users',),
+        'permissions': 'auth.user'},
         "-",
 
-        {'label': 'Symptoms', 'icon':'None', 'permissions': 'auth.user', "name":"Symptoms", 'models': (
-            'symptomsrecord.SymptomsDef', 'symptomsrecord.SymptomsUser', 'symptomsrecord.SymptomsRecord',)},
+        {'label': 'Symptoms', 'icon': 'None', 'permissions': 'auth.user', "name": "Symptoms",
+        'models': ('symptomsrecord.SymptomsDef', 'symptomsrecord.SymptomsUser',
+            'symptomsrecord.SymptomsRecord',)},
         '-',
 
         {'label': 'Vitals', 'icon': 'None', 'permissions': 'auth.user', 'models': ('vitalsrecord.Vitals',
                                                                                  'vitalsrecord.VitalReport')},
         )
-}
+    }

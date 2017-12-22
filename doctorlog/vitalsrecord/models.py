@@ -1,12 +1,11 @@
+"""Vital Models."""
 from django.db import models
 from modules.models import Users
-from django.utils.timezone import now
 
 
 class Vitals(models.Model):
-    """
-    Vitals model
-    """
+    """Vitals model."""
+
     name = models.CharField(max_length=100)
     description = models.CharField(max_length=1000)
     mediaURL = models.URLField(null=True, blank=True)
@@ -19,19 +18,22 @@ class Vitals(models.Model):
     status = models.BooleanField(default=True)
 
     class Meta:
+        """Meta."""
+
         ordering = ["name"]
 
     def __str__(self):
+        """str."""
         return self.name + " : " + self.description
 
     def __unicode__(self):
+        """unicode."""
         return self.name + " : " + self.description
 
 
 class VitalReport(models.Model):
-    """
-    Vitals Report model
-    """
+    """Vitals Report model."""
+
     userID = models.ForeignKey(Users)
     vitalID = models.ForeignKey(Vitals)
     stressLevel = models.CharField(max_length=10)
@@ -50,7 +52,11 @@ class VitalReport(models.Model):
     status = models.BooleanField(default=True)
 
     def __str__(self):
-        return self.userID.first_name + " " + self.userID.last_name + " : " + self.vitalID.name
+        """str."""
+        return self.userID.first_name + " " + self.userID.last_name
+        + " : " + self.vitalID.name
 
     def __unicode__(self):
-        return self.userID.first_name + " " + self.userID.last_name + " : " + self.vitalID.name
+        """unicode."""
+        return self.userID.first_name + " " + self.userID.last_name
+        + " : " + self.vitalID.name
