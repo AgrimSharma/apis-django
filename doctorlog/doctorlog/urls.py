@@ -1,16 +1,13 @@
-""".
-
-Urls.py
-"""
 from django.contrib import admin
 from rest_framework.documentation import include_docs_urls
 from django.conf.urls import url, include
 from rest_framework import routers
 from modules import views
-from symptomsrecord.views import SymptomsListAPI, SymptomsRecordsAPI, \
-    SymptomsRecordsUserAPI, SymptomsListUserAPI, SymptomsDefName, SymptomsAPI
-from vitalsrecord.views import VitalsReportAPI, VitalsAPI, \
-    VitalsReportUserAPI, VitalsNameAPI
+from symptomsrecord.views import SymptomsListAPI, SymptomsRecordsAPI, SymptomsRecordsUserAPI, SymptomsListUserAPI, \
+    SymptomsDefName, SymptomsAPI
+from vitalsrecord.views import VitalsReportAPI, VitalsAPI, VitalsReportUserAPI, VitalsNameAPI
+from doctor.views import DoctorViewSet, DoctorPatientViewSet
+
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'symptoms', SymptomsListAPI, base_name='test')
@@ -18,6 +15,8 @@ router.register(r'symptoms_records', SymptomsRecordsAPI)
 router.register(r'vitals', VitalsAPI)
 router.register(r'vitals_reports', VitalsReportAPI)
 router.register(r'symptoms_def', SymptomsAPI)
+router.register(r'doctor', DoctorViewSet)
+router.register(r'doctor-patient', DoctorPatientViewSet)
 
 
 urlpatterns = [
@@ -35,6 +34,5 @@ urlpatterns = [
     url(r'api/v1/symptoms/records/users/', SymptomsRecordsUserAPI.as_view()),
     url(r'api/v1/symptoms/by/users/', SymptomsListUserAPI.as_view(),
         name="symptoms_user"),
-
 
 ]

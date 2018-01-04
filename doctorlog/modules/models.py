@@ -2,17 +2,12 @@ from django.contrib.auth.models import User
 
 from django.db import models
 
-roles = (
-    ('Doctor', 'Doctor'),
-    ('User', 'User'),
-)
-
 
 class Users(User):
     """
     User model for user data insertion
     """
-    role = models.CharField(max_length=50, choices=roles, default='User')
+    role = models.CharField(max_length=50, default='User')
     createdDate = models.DateTimeField(null=True, blank=True)
     updatedDate = models.DateTimeField(null=True, blank=True)
     status = models.BooleanField(default=True)

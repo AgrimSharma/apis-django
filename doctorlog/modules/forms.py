@@ -1,20 +1,17 @@
-"""forms."""
 # coding=utf-8
 import django.forms
-from suit.widgets import AutosizedTextarea, SuitSplitDateTimeWidget,\
-    HTML5Input, EnclosedInput
-from .models import Users
+from suit.widgets import AutosizedTextarea, SuitSplitDateTimeWidget, HTML5Input, EnclosedInput
+from .models import *
 
 
 class UserForm(django.forms.ModelForm):
-    """User form."""
-
+    """
+    User form
+    """
     class Meta:
-        """Test."""
-
         model = Users
-        fields = ['first_name', 'last_name', "email", 'password',
-                  'role', 'status', "createdDate", "updatedDate"]
+        fields = ['first_name', 'last_name', "email", 'password', 'role',
+                  'status', "createdDate", "updatedDate"]
         widgets = {
             "first_name": AutosizedTextarea,
             "email": EnclosedInput(append='icon-envelope'),

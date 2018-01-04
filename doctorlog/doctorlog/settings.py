@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 """
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-import os
+import os, sys
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -24,17 +24,17 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '9gzoa3j(*%3lkl00^#tb3i@pex*#hk=0k(2b9fq8_ez_bl)9-)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
-DEBUG = False
+DEBUG = True
+# DEBUG = False
+ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = ["localhost", "127.0.0.1", "0.0.0.0"]
 
-# ALLOWED_HOSTS = [".pythonanywhere.com"]
-ALLOWED_HOSTS = ["*"]
-# ALLOWED_HOSTS = []
 
 # Application definition
 
 INSTALLED_APPS = [
     'suit',
+    "corsheaders",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -45,9 +45,11 @@ INSTALLED_APPS = [
     'modules',
     'symptomsrecord',
     "vitalsrecord",
+    'doctor'
 ]
 
 MIDDLEWARE_CLASSES = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -58,6 +60,7 @@ MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
 ]
 
+CORS_ORIGIN_ALLOW_ALL = True 
 ROOT_URLCONF = 'doctorlog.urls'
 
 TEMPLATES = [
@@ -71,22 +74,21 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-
-            ],
+                ],
         },
     },
 ]
 
 WSGI_APPLICATION = 'doctorlog.wsgi.application'
 
-dbpath = '/home/pranav/apis-django/doctorlog/'
+
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(dbpath, "db1.sqlite3"),
+        'NAME': os.path.join(BASE_DIR, 'db1.sqlite3'),
     }
 }
 
@@ -106,21 +108,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = ["/home/prnav/apis-django/doctorlog/static"]
-
-STATIC_ROOT = os.path.join(BASE_DIR, "static/")
-
-# STATIC_ROOT = "/home/pranav/apis-django/doctorlog/static/"
 REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES': [
         'rest_framework.renderers.JSONRenderer',
         'rest_framework.renderers.BrowsableAPIRenderer',
-        # 'rest_framework.permissions.IsAdminUser',
-    ],
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework.authentication.BasicAuthentication',
-        'rest_framework.authentication.SessionAuthentication',
-    ),
+      ],
     'HIDE_DOCS': True,
     'TEST_REQUEST_DEFAULT_FORMAT': 'json'
 }
@@ -130,15 +122,24 @@ SUIT_CONFIG = {
         'sites',
 
         {'label': 'User', 'icon': 'icon-user', 'models': ('modules.Users',),
-        'permissions': 'auth.user'},
+         'permissions': 'auth.user'},
         "-",
 
-        {'label': 'Symptoms', 'icon': 'None', 'permissions': 'auth.user', "name": "Symptoms",
-        'models': ('symptomsrecord.SymptomsDef', 'symptomsrecord.SymptomsUser',
-            'symptomsrecord.SymptomsRecord',)},
+        {'label': 'Symptoms', 'icon': 'None', 'permissions': 'auth.user',
+         "name": "Symptoms", 'models': ('symptomsrecord.SymptomsDef',
+                                        'symptomsrecord.SymptomsUser',
+                                        'symptomsrecord.SymptomsRecord',)},
         '-',
 
-        {'label': 'Vitals', 'icon': 'None', 'permissions': 'auth.user', 'models': ('vitalsrecord.Vitals',
-                                                                                 'vitalsrecord.VitalReport')},
+        {'label': 'Vitals', 'icon': 'None', 'permissions': 'auth.user',
+         'models': ('vitalsrecord.Vitals', 'vitalsrecord.VitalReport')},
+        '-',
+        {'label': 'Doctor', 'icon': 'None', 'permissions': 'auth.user',
+         'models': ('doctor.Doctor', 'doctor.DoctorPatient',
+                    'doctor.DoctorAppointment',)},
         )
-    }
+}
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+)

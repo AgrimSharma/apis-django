@@ -1,11 +1,13 @@
-"""# coding=utf-8."""
+# coding=utf-8
 from django.db import models
 from modules.models import Users
+import django.utils.timezone
 
 
 class SymptomsDef(models.Model):
-    """Symptoms Definition model."""
-
+    """
+    Symptoms Definition model
+    """
     name = models.CharField(max_length=100, unique=True)
     subTitle = models.CharField(max_length=100, null=True, blank=True)
     description = models.CharField(max_length=1000, null=True, blank=True)
@@ -22,22 +24,19 @@ class SymptomsDef(models.Model):
     status = models.BooleanField(default=True)
 
     class Meta:
-        """meta."""
-
         ordering = ["name"]
 
     def __str__(self):
-        """str."""
         return self.name
 
     def __unicode__(self):
-        """unicode."""
         return self.name
 
 
 class SymptomsUser(models.Model):
-    """Symptoms Definition model."""
-
+    """
+    Symptoms Definition model
+    """
     userID = models.ForeignKey(Users, related_name="symptom_user")
     name = models.CharField(max_length=100, unique=True)
     subTitle = models.CharField(max_length=100, null=True, blank=True)
@@ -55,24 +54,19 @@ class SymptomsUser(models.Model):
     status = models.BooleanField(default=True)
 
     class Meta:
-        """Meta."""
-
         ordering = ["name"]
 
     def __str__(self):
-        """str."""
-        return self.userID.first_name + " " + self.userID.last_name
-        + " : " + self.name
+        return self.userID.first_name + " " + self.userID.last_name + " : " + self.name
 
     def __unicode__(self):
-        """unicode."""
-        return self.userID.first_name + " " + self.userID.last_name
-        + " : " + self.name
+        return self.userID.first_name + " " + self.userID.last_name + " : " + self.name
 
 
 class SymptomsRecord(models.Model):
-    """Symptoms Definition Record model for Users."""
-
+    """
+    Symptoms Definition Record model for Users
+    """
     userID = models.ForeignKey(Users, related_name="symptom_report_user")
     symptomsID = models.ForeignKey(SymptomsUser, related_name="symptom_users")
     reportedDate = models.DateTimeField(null=True, blank=True)
@@ -80,11 +74,7 @@ class SymptomsRecord(models.Model):
     status = models.BooleanField(default=True)
 
     def __str__(self):
-        """str."""
-        return self.userID.first_name + " " + self.userID.last_name
-        + " : " + self.symptomsID.name
+        return self.userID.first_name + " " + self.userID.last_name + " : " + self.symptomsID.name
 
     def __unicode__(self):
-        """unicode."""
-        return self.userID.first_name + " " + self.userID.last_name
-        + " : " + self.symptomsID.name
+        return self.userID.first_name + " " + self.userID.last_name + " : " + self.symptomsID.name
