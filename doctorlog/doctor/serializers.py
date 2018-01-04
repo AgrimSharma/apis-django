@@ -32,3 +32,14 @@ class DoctorPatientSerializer(serializers.ModelSerializer):
     class Meta:
         model = DoctorPatient
         fields = ("doctor", "patient", "createdDate", 'updatedDate')
+
+
+class DoctorAppointmentSerializer(serializers.ModelSerializer):
+    createdDate = serializers.DateTimeField(
+        default=datetime.datetime.now())
+    updatedDate = serializers.DateTimeField(
+        default=datetime.datetime.now())
+
+    class Meta:
+        model = DoctorAppointment
+        fields = ("doctor", "patient", 'appointmentDate',"createdDate", 'updatedDate')

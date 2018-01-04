@@ -2,11 +2,11 @@ from django.contrib import admin
 from rest_framework.documentation import include_docs_urls
 from django.conf.urls import url, include
 from rest_framework import routers
-from modules import views
-from symptomsrecord.views import SymptomsListAPI, SymptomsRecordsAPI, SymptomsRecordsUserAPI, SymptomsListUserAPI, \
-    SymptomsDefName, SymptomsAPI
+from modules.views import views
+from symptomsrecord.views import SymptomsListAPI, SymptomsRecordsAPI, SymptomsRecordsUserAPI, \
+    SymptomsListUserAPI, SymptomsDefName, SymptomsAPI
 from vitalsrecord.views import VitalsReportAPI, VitalsAPI, VitalsReportUserAPI, VitalsNameAPI
-from doctor.views import DoctorViewSet, DoctorPatientViewSet
+from doctor.views import DoctorViewSet, DoctorPatientViewSet, DoctorAppointmentViewSet
 
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
@@ -17,6 +17,7 @@ router.register(r'vitals_reports', VitalsReportAPI)
 router.register(r'symptoms_def', SymptomsAPI)
 router.register(r'doctor', DoctorViewSet)
 router.register(r'doctor-patient', DoctorPatientViewSet)
+router.register(r'doctor-appointment', DoctorAppointmentViewSet)
 
 
 urlpatterns = [

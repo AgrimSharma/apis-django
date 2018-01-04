@@ -2,33 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0863f01c-6979-485d-844b-808782bd56ca" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doctorlog/db.sqlite3" afterPath="$PROJECT_DIR$/doctorlog/db.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doctorlog/db1.sqlite3" afterPath="$PROJECT_DIR$/doctorlog/db1.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/apis-django.iml" afterPath="$PROJECT_DIR$/.idea/apis-django.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doctorlog/.idea/doctorlog.iml" afterPath="$PROJECT_DIR$/doctorlog/.idea/doctorlog.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doctorlog/.idea/misc.xml" afterPath="$PROJECT_DIR$/doctorlog/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doctorlog/.idea/workspace.xml" afterPath="$PROJECT_DIR$/doctorlog/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doctorlog/doctorlog/settings.py" afterPath="$PROJECT_DIR$/doctorlog/doctorlog/settings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doctorlog/doctor/serializers.py" afterPath="$PROJECT_DIR$/doctorlog/doctor/serializers.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doctorlog/doctor/views.py" afterPath="$PROJECT_DIR$/doctorlog/doctor/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doctorlog/doctorlog/urls.py" afterPath="$PROJECT_DIR$/doctorlog/doctorlog/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doctorlog/doctorlog/wsgi.py" afterPath="$PROJECT_DIR$/doctorlog/doctorlog/wsgi.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doctorlog/modules/admin.py" afterPath="$PROJECT_DIR$/doctorlog/modules/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doctorlog/modules/forms.py" afterPath="$PROJECT_DIR$/doctorlog/modules/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doctorlog/modules/models.py" afterPath="$PROJECT_DIR$/doctorlog/modules/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doctorlog/modules/serializers.py" afterPath="$PROJECT_DIR$/doctorlog/modules/serializers.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doctorlog/modules/tests.py" afterPath="$PROJECT_DIR$/doctorlog/modules/tests.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doctorlog/modules/views.py" afterPath="$PROJECT_DIR$/doctorlog/modules/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doctorlog/symptomsrecord/admin.py" afterPath="$PROJECT_DIR$/doctorlog/symptomsrecord/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doctorlog/symptomsrecord/forms.py" afterPath="$PROJECT_DIR$/doctorlog/symptomsrecord/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doctorlog/symptomsrecord/models.py" afterPath="$PROJECT_DIR$/doctorlog/symptomsrecord/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doctorlog/symptomsrecord/serializers.py" afterPath="$PROJECT_DIR$/doctorlog/symptomsrecord/serializers.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doctorlog/symptomsrecord/views.py" afterPath="$PROJECT_DIR$/doctorlog/symptomsrecord/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doctorlog/vitalsrecord/admin.py" afterPath="$PROJECT_DIR$/doctorlog/vitalsrecord/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doctorlog/vitalsrecord/forms.py" afterPath="$PROJECT_DIR$/doctorlog/vitalsrecord/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doctorlog/vitalsrecord/models.py" afterPath="$PROJECT_DIR$/doctorlog/vitalsrecord/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doctorlog/vitalsrecord/serializers.py" afterPath="$PROJECT_DIR$/doctorlog/vitalsrecord/serializers.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doctorlog/vitalsrecord/views.py" afterPath="$PROJECT_DIR$/doctorlog/vitalsrecord/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -42,7 +19,7 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/doctorlog/modules/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
+            <state relative-caret-position="60">
               <caret line="9" column="43" lean-forward="false" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
@@ -54,17 +31,17 @@
       <file leaf-file-name="serializers.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/doctorlog/modules/serializers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="690">
-              <caret line="48" column="25" lean-forward="false" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
+            <state relative-caret-position="225">
+              <caret line="17" column="40" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="17" selection-end-column="40" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/doctorlog/modules/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
+            <state relative-caret-position="300">
               <caret line="20" column="20" lean-forward="false" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="20" />
               <folding>
                 <element signature="e#15#51#0" expanded="true" />
@@ -76,8 +53,8 @@
       <file leaf-file-name="serializers.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/doctorlog/doctor/serializers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="28" column="18" lean-forward="false" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
+            <state relative-caret-position="485">
+              <caret line="44" column="57" lean-forward="false" selection-start-line="44" selection-start-column="57" selection-end-line="44" selection-end-column="57" />
               <folding>
                 <element signature="e#16#76#0" expanded="true" />
               </folding>
@@ -85,53 +62,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/doctorlog/doctor/admin.py">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/doctorlog/doctor/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="24" column="2" lean-forward="false" selection-start-line="24" selection-start-column="2" selection-end-line="28" selection-end-column="41" />
+            <state relative-caret-position="285">
+              <caret line="19" column="30" lean-forward="false" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="30" />
               <folding>
-                <element signature="e#0#32#0" expanded="true" />
+                <element signature="e#0#95#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="apps.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/doctorlog/modules/apps.py">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/doctorlog/doctorlog/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="admin.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/doctorlog/modules/admin.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="16" column="35" lean-forward="false" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/doctorlog/modules/forms.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="11" column="21" lean-forward="false" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="admin.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/doctorlog/vitalsrecord/admin.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+            <state relative-caret-position="60">
+              <caret line="4" column="31" lean-forward="false" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -168,9 +115,6 @@
         <option value="$PROJECT_DIR$/doctorlog/doctor/__init__.py" />
         <option value="$PROJECT_DIR$/doctorlog/doctorlog/__init__.py" />
         <option value="$PROJECT_DIR$/doctorlog/doctorlog/settings.py" />
-        <option value="$PROJECT_DIR$/doctorlog/doctor/views.py" />
-        <option value="$PROJECT_DIR$/doctorlog/doctorlog/urls.py" />
-        <option value="$PROJECT_DIR$/doctorlog/doctor/serializers.py" />
         <option value="$PROJECT_DIR$/doctorlog/doctor/admin.py" />
         <option value="$PROJECT_DIR$/doctorlog/symptomsrecord/admin.py" />
         <option value="$PROJECT_DIR$/doctorlog/vitalsrecord/admin.py" />
@@ -178,6 +122,9 @@
         <option value="$PROJECT_DIR$/doctorlog/modules/models.py" />
         <option value="$PROJECT_DIR$/doctorlog/modules/forms.py" />
         <option value="$PROJECT_DIR$/doctorlog/modules/tests.py" />
+        <option value="$PROJECT_DIR$/doctorlog/doctor/serializers.py" />
+        <option value="$PROJECT_DIR$/doctorlog/doctor/views.py" />
+        <option value="$PROJECT_DIR$/doctorlog/doctorlog/urls.py" />
       </list>
     </option>
   </component>
@@ -213,12 +160,6 @@
               <item name="apis-django" type="b2602c69:ProjectViewProjectNode" />
               <item name="apis-django" type="462c0819:PsiDirectoryNode" />
               <item name="doctorlog" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="apis-django" type="b2602c69:ProjectViewProjectNode" />
-              <item name="apis-django" type="462c0819:PsiDirectoryNode" />
-              <item name="doctorlog" type="462c0819:PsiDirectoryNode" />
-              <item name="doctor" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="apis-django" type="b2602c69:ProjectViewProjectNode" />
@@ -320,14 +261,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/doctorlog/modules/tests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="21" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/doctorlog/modules/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -575,20 +508,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/doctorlog/doctor/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="26" lean-forward="false" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/doctorlog/doctorlog/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="32" lean-forward="false" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/doctorlog/symptomsrecord/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -596,17 +515,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/doctorlog/vitalsrecord/admin.py">
+    <entry file="file://$PROJECT_DIR$/doctorlog/modules/tests.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+        <state relative-caret-position="210">
+          <caret line="14" column="9" lean-forward="false" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/doctorlog/doctor/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
+        <state relative-caret-position="360">
           <caret line="24" column="2" lean-forward="false" selection-start-line="24" selection-start-column="2" selection-end-line="28" selection-end-column="41" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
@@ -614,13 +533,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/doctorlog/doctor/serializers.py">
+    <entry file="file://$PROJECT_DIR$/doctorlog/modules/apps.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="28" column="18" lean-forward="false" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
-          <folding>
-            <element signature="e#16#76#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -628,14 +545,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="16" column="35" lean-forward="false" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/doctorlog/modules/apps.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -648,9 +557,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/doctorlog/vitalsrecord/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="395">
+          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/doctorlog/modules/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="60">
           <caret line="9" column="43" lean-forward="false" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
@@ -658,29 +575,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/doctorlog/modules/serializers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="48" column="25" lean-forward="false" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/doctorlog/modules/tests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="9" lean-forward="false" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/doctorlog/modules/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
+        <state relative-caret-position="300">
           <caret line="20" column="20" lean-forward="false" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="20" />
           <folding>
             <element signature="e#15#51#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doctorlog/modules/serializers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="17" column="40" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="17" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doctorlog/requirments.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-45">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doctorlog/doctor/serializers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="485">
+          <caret line="44" column="57" lean-forward="false" selection-start-line="44" selection-start-column="57" selection-end-line="44" selection-end-column="57" />
+          <folding>
+            <element signature="e#16#76#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doctorlog/doctor/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="30" lean-forward="false" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#95#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doctorlog/doctorlog/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="31" lean-forward="false" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>
