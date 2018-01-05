@@ -2,11 +2,14 @@ from django.contrib import admin
 from rest_framework.documentation import include_docs_urls
 from django.conf.urls import url, include
 from rest_framework import routers
-from modules.views import views
+from modules import views
 from symptomsrecord.views import SymptomsListAPI, SymptomsRecordsAPI, SymptomsRecordsUserAPI, \
     SymptomsListUserAPI, SymptomsDefName, SymptomsAPI
 from vitalsrecord.views import VitalsReportAPI, VitalsAPI, VitalsReportUserAPI, VitalsNameAPI
 from doctor.views import DoctorViewSet, DoctorPatientViewSet, DoctorAppointmentViewSet
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
@@ -36,4 +39,4 @@ urlpatterns = [
     url(r'api/v1/symptoms/by/users/', SymptomsListUserAPI.as_view(),
         name="symptoms_user"),
 
-]
+]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
