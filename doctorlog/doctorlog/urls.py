@@ -6,7 +6,7 @@ from modules import views
 from symptomsrecord.views import SymptomsListAPI, SymptomsRecordsAPI, SymptomsRecordsUserAPI, \
     SymptomsListUserAPI, SymptomsDefName, SymptomsAPI
 from vitalsrecord.views import VitalsReportAPI, VitalsAPI, VitalsReportUserAPI, VitalsNameAPI
-from doctor.views import DoctorViewSet, DoctorPatientViewSet, DoctorAppointmentViewSet
+from doctor.views import DoctorViewSet, DoctorPatientViewSet, DoctorAppointmentViewSet, MedicationViewSet
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -21,6 +21,7 @@ router.register(r'symptoms_def', SymptomsAPI)
 router.register(r'doctor', DoctorViewSet)
 router.register(r'doctor-patient', DoctorPatientViewSet)
 router.register(r'doctor-appointment', DoctorAppointmentViewSet)
+router.register(r'medication', MedicationViewSet)
 
 
 urlpatterns = [

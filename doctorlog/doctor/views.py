@@ -1,5 +1,5 @@
-from .serializers import DoctorSerializer, DoctorPatientSerializer, DoctorAppointmentSerializer
-from .models import Doctor, DoctorPatient, DoctorAppointment
+from .serializers import DoctorSerializer, DoctorPatientSerializer, DoctorAppointmentSerializer, MedicationSerializer
+from .models import Doctor, DoctorPatient, DoctorAppointment, Medication
 from rest_framework import viewsets
 
 
@@ -22,3 +22,10 @@ class DoctorAppointmentViewSet(viewsets.ModelViewSet):
 
     queryset = DoctorAppointment.objects.all()
     serializer_class = DoctorAppointmentSerializer
+
+
+class MedicationViewSet(viewsets.ModelViewSet):
+    """<h4>API endpoint that allows users to be viewed or edited.</h4>"""
+
+    queryset = Medication.objects.all()
+    serializer_class = MedicationSerializer

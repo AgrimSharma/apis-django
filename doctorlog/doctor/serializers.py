@@ -1,6 +1,6 @@
 # coding=utf-8
 
-from .models import DoctorAppointment, DoctorPatient, Doctor
+from .models import DoctorAppointment, DoctorPatient, Doctor, Medication
 from rest_framework import serializers
 import datetime
 
@@ -43,3 +43,16 @@ class DoctorAppointmentSerializer(serializers.ModelSerializer):
     class Meta:
         model = DoctorAppointment
         fields = ("doctor", "patient", 'appointmentDate',"createdDate", 'updatedDate')
+
+
+class MedicationSerializer(serializers.ModelSerializer):
+    # createdDate = serializers.DateTimeField(
+    #     default=datetime.datetime.now())
+    # updatedDate = serializers.DateTimeField(
+    #     default=datetime.datetime.now())
+
+    class Meta:
+        model = Medication
+        fields = ['name', 'prescribed_by', 'patient', 'dose', "medicine_pic",
+                  "schedule", "medicine_type", "instructions", "remind_me", "refills",
+                  "boxters"]

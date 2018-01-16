@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import Doctor, DoctorPatient, DoctorAppointment
-from .forms import DoctorForm, DoctorPatientForm, DoctorAppointmentForm
+from .models import Doctor, DoctorPatient, DoctorAppointment, Medication
+from .forms import DoctorForm, DoctorPatientForm, DoctorAppointmentForm, MedicationForm
 # Register your models here.
 
 
@@ -43,6 +43,24 @@ class DoctorPatientAppointmentAdmin(admin.ModelAdmin):
     def doctors(self, obj):
         return obj.doctor.get_full_name()
 
+
+class MedicationAdmin(admin.ModelAdmin):
+    """
+    User Admin Panel
+    """
+    form = MedicationForm
+    list_display = ('doctors', 'patients', "name")
+    fields = ['name', 'prescribed_by', 'patient', 'dose', "medicine_pic", "schedule",
+              "medicine_type", "instructions", "remind_me", "refills", "boxters"]
+
+    def patients(self, obj):
+        return obj.patient.get_full_name()
+
+    def doctors(self, obj):
+        return obj.prescribed_by.get_full_name()
+
+
 admin.site.register(Doctor, DoctorAdmin)
 admin.site.register(DoctorPatient, DoctorPatientAdmin)
 admin.site.register(DoctorAppointment, DoctorPatientAppointmentAdmin)
+admin.site.register(Medication, MedicationAdmin)

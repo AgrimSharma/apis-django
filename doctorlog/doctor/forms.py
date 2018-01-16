@@ -1,7 +1,7 @@
 # coding=utf-8
 import django.forms
 from suit.widgets import AutosizedTextarea, SuitSplitDateTimeWidget, HTML5Input, EnclosedInput
-from .models import DoctorPatient, Doctor, DoctorAppointment
+from .models import DoctorPatient, Doctor, DoctorAppointment, Medication
 
 
 class DoctorForm(django.forms.ModelForm):
@@ -47,3 +47,20 @@ class DoctorAppointmentForm(django.forms.ModelForm):
             'createdDate': SuitSplitDateTimeWidget,
             "updatedDate": SuitSplitDateTimeWidget
         }
+
+
+class MedicationForm(django.forms.ModelForm):
+    """
+    User form
+    """
+    medicine_pic = django.forms.ImageField,
+
+    class Meta:
+        model = Medication
+        fields = ['name', 'prescribed_by', 'patient', 'dose', "medicine_pic",
+                  "schedule", "medicine_type", "instructions", "remind_me", "refills",
+                  "boxters"]
+        # widgets = {
+            # 'createdDate': SuitSplitDateTimeWidget,
+            # "updatedDate": SuitSplitDateTimeWidget
+        # }
