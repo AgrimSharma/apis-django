@@ -38,7 +38,7 @@ class SymptomsDefSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = SymptomsDef
-        fields = ['name', 'description', 'subTitle', 'mediaTitle', "mediaURL", 'describe', 'location',
+        fields = ['name', 'description', 'subTitle', 'mediaTitle', "mediaURL",'videoTitle', "videoURL", 'describe', 'location',
                   "length", "triggeredBy", "otherSymptoms", "reliefBy", "status", "createdDate" ,"updatedDate"]
 
 
@@ -51,7 +51,7 @@ class DefSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = SymptomsDef
-        fields = ['name', 'description', 'subTitle', 'mediaTitle', "mediaURL", 'describe', 'location',
+        fields = ['name', 'description', 'subTitle', 'mediaTitle', "mediaURL",'videoTitle', "videoURL", 'describe', 'location',
                   "length", "triggeredBy", "otherSymptoms", "reliefBy", "status", "createdDate" ,"updatedDate"]
 
 
