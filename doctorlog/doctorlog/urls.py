@@ -39,5 +39,6 @@ urlpatterns = [
     url(r'api/v1/symptoms/records/users/', SymptomsRecordsUserAPI.as_view()),
     url(r'api/v1/symptoms/by/users/', SymptomsListUserAPI.as_view(),
         name="symptoms_user"),
+    url(r'media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
 
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

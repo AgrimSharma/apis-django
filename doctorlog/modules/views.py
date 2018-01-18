@@ -44,7 +44,7 @@ class LoginUserAPI(GenericAPIView):
     def post(self, request):
         """<h4>Validate a user by email</h4>"""
         user = User.objects.get(email=request.data['email'])
-        check = user.check_password(request.data['password'], user.password)
+        check = user.check_password(request.data['password'])
         return JsonResponse(dict(status=status.HTTP_200_OK) if check else
                             dict(status=status.HTTP_404_NOT_FOUND))
 

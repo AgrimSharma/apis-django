@@ -92,6 +92,8 @@ class SymptomsDefName(GenericAPIView):
                                  description=symptom.description,
                                  mediaTitle=symptom.mediaTitle,
                                  mediaURL=symptom.mediaURL,
+                                 videoTitle=symptom.videoTitle,
+                                 videoURL=symptom.videoURL,
                                  describe=symptom.describe,
                                  location=symptom.location,
                                  length=symptom.length,

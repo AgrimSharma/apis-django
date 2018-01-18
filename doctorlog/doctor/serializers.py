@@ -46,11 +46,6 @@ class DoctorAppointmentSerializer(serializers.ModelSerializer):
 
 
 class MedicationSerializer(serializers.ModelSerializer):
-    # createdDate = serializers.DateTimeField(
-    #     default=datetime.datetime.now())
-    # updatedDate = serializers.DateTimeField(
-    #     default=datetime.datetime.now())
-
     class Meta:
         model = Medication
         fields = ['name', 'prescribed_by', 'patient', 'dose', "medicine_pic",

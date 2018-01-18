@@ -9,7 +9,7 @@ class SymptomsDefForm(ModelForm):
     """
     class Meta:
         model = SymptomsDef
-        fields = ['name', 'description', 'subTitle', 'mediaTitle', "mediaURL", 'describe', 'location',
+        fields = ['name', 'description', 'subTitle', 'mediaTitle', "mediaURL", 'videoTitle', "videoURL", 'describe', 'location',
                   "length", "triggeredBy", "otherSymptoms", "reliefBy", "status"]
         widgets = {
             "description": AutosizedTextarea,
@@ -48,8 +48,11 @@ class SymptomsUserForm(ModelForm):
     class Meta:
 
         model = SymptomsUser
-        fields = ['userID','name', 'description', 'subTitle', 'mediaTitle', "mediaURL", 'describe', 'location',
-                  "length", "triggeredBy", "otherSymptoms", "reliefBy", "status"]
+        fields = [
+                  'userID', 'name', 'description', 'subTitle', 'mediaTitle',
+                  "mediaURL", 'videoTitle', "videoURL", 'describe', 'location',
+                  "length", "triggeredBy", "otherSymptoms", "reliefBy",
+                  "status"]
         widgets = {
             "description": AutosizedTextarea,
             "describe": AutosizedTextarea,

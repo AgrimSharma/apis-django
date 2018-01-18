@@ -60,7 +60,3 @@ class MedicationForm(django.forms.ModelForm):
         fields = ['name', 'prescribed_by', 'patient', 'dose', "medicine_pic",
                   "schedule", "medicine_type", "instructions", "remind_me", "refills",
                   "boxters"]
-        # widgets = {
-            # 'createdDate': SuitSplitDateTimeWidget,
-            # "updatedDate": SuitSplitDateTimeWidget
-        # }

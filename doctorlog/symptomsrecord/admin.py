@@ -10,8 +10,10 @@ class AdminSymtomsDef(admin.ModelAdmin):
     """
     form = SymptomsDefForm
     list_display = ('name', 'description')
-    fields = [('name', 'description'), 'subTitle', ('mediaTitle', "mediaURL"), ('describe', 'location'),
-              ("length", "triggeredBy"), ("otherSymptoms", "reliefBy"), "createdDate", "updatedDate", "status"]
+    fields = [('name', 'description'), 'subTitle', ('mediaTitle', "mediaURL"),
+              ('videoTitle', "videoURL"), ('describe', 'location'),
+              ("length", "triggeredBy"), ("otherSymptoms", "reliefBy"),
+              "createdDate", "updatedDate", "status"]
 
 
 class AdminSymptomsRecord(admin.ModelAdmin):
@@ -37,8 +39,11 @@ class AdminSymptomsUser(admin.ModelAdmin):
     """
     form = SymptomsUserForm
     list_display = ('users', 'name', 'description')
-    fields = ["userID", ('name', 'description'), 'subTitle', ('mediaTitle', "mediaURL"), ('describe', 'location'),
-              ("length", "triggeredBy"), ("otherSymptoms", "reliefBy"), "createdDate", "updatedDate", "status"]
+    fields = [('name', 'description'), 'subTitle', ('mediaTitle', "mediaURL"),
+              ('videoTitle', "videoURL"), ('describe', 'location'),
+              ("length", "triggeredBy"), ("otherSymptoms", "reliefBy"),
+              "createdDate", "updatedDate", "status"]
+
 
     def users(self, obj):
         return obj.userID.get_full_name()
