@@ -1,6 +1,5 @@
 from django.db import models
 from modules.models import Users
-from django.utils.timezone import now
 
 
 class Vitals(models.Model):

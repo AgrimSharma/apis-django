@@ -44,9 +44,9 @@ class AdminSymptomsUser(admin.ModelAdmin):
               ("length", "triggeredBy"), ("otherSymptoms", "reliefBy"),
               "createdDate", "updatedDate", "status"]
 
-
     def users(self, obj):
         return obj.userID.get_full_name()
+
 
 admin.site.register(SymptomsDef, AdminSymtomsDef)
 admin.site.register(SymptomsUser, AdminSymptomsUser)
